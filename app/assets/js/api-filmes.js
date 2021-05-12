@@ -61,20 +61,20 @@ export const ListComponent = {
             </div>
         </div>
     </div>
-</div>-->
+</div> -->
 
 <div class="movie-item-style-2 movie-item-style-1" v-for="item in dataLista">
-    <img src="app/assets/images/uploads/mv2.jpg" alt="">
+    <img src="app/assets/images/uploads/mv1.jpg" alt="">
     <div class="hvr-inner">
-        <a href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i>
-        </a>
+        <a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
     </div>
     <div class="mv-item-infor">
-        <h6><a href="#">{{item.Nome}}</a></h6>
-        <p class="rate"><i class="ion-android-star"></i><span>{{item.Nota}}</span> /10</p>
-        <p class="rate"><i class="ion-android-star"></i><span>{{item.Ano}}</span></p>
+
+        <h6><a href="#" id="Nome">{{item.Nome}}</a></h6>
+        <p class="rate"><i class="ion-android-star"></i><span id="Nota">{{item.Nota}}</span> /10</p>
+        <p class="rate"><i class="ion-android-star"></i><span id="Ano">{{item.Ano}}</span></p>
     </div>
-</div>`,
+</div>		`,
     data() {
         return {
             dataLista: []
@@ -84,7 +84,7 @@ export const ListComponent = {
         fetch('http://localhost:3000/lista-filmes', {method: 'GET', mode: 'cors'})
         .then((response) => {    
             response.json().then((data) => {
-                console.table(data)
+                // console.table(data)
                 this.dataLista = data
             })
         })
