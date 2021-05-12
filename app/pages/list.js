@@ -1,6 +1,6 @@
 export const ListComponent = {
     template: `
-    <div class="overflow-x-auto">    
+    <!--<div class="overflow-x-auto">    
     <div class="min-w-screen min-h-screen bg-gray-200 flex items-center justify-center bg-gray-100 font-sans overflow-hidden">        
         <div class="w-full lg:w-5/6">
         <router-link to="/create">       
@@ -14,7 +14,8 @@ export const ListComponent = {
                         <tr class="bg-blue-300 text-black-400 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">ID</th>
                             <th class="py-3 px-6 text-left">NOME</th>
-                            <th class="py-3 px-6 text-center">AÇÕES</th>
+                            <th class="py-3 px-6 text-center">NOTA</th>
+                            <th class="py-3 px-6 text-center">ANO</th>
                         </tr>
                     </thead>
                     <tbody class="text-gray-600 text-sm font-light">
@@ -26,9 +27,19 @@ export const ListComponent = {
                             </td>
                             <td class="py-3 px-6 text-left">
                                 <div class="flex items-center">
-                                    <span class="font-medium">{{item.nome}}</span>
+                                    <span class="font-medium">{{item.Nome}}</span>
                                 </div>
-                            </td>                            
+                            </td>
+                            <td class="py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                    <span class="font-medium">{{item.Nota}}</span>
+                                </div>
+                            </td>      
+                            <td class="py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                    <span class="font-medium">{{item.Ano}}</span>
+                                </div>
+                            </td>                                  
                             <td class="py-3 px-6 text-center">
                                 <div class="flex item-center justify-center">
                                     <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
@@ -61,18 +72,30 @@ export const ListComponent = {
             </div>
         </div>
     </div>
-</div>`,
+</div>-->
+
+                            <div class="movie-item-style-2 movie-item-style-1" v-for="item in dataLista">
+                                <img src="/assets/images/uploads/mv1.jpg" alt="">
+                                <div class="hvr-inner">
+                                    <a href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i>
+                                    </a>
+                                </div>
+                                <div class="mv-item-infor">
+                                    <h6><a href="#">{{item.Nome}}</a></h6>
+                                    <p class="rate"><i class="ion-android-star"></i><span>{{item.Nota}}</span> {{item.Ano}}</p>
+                                </div>
+                            </div>`,
     data() {
         return {
             dataLista: []
         }
     },
     mounted() {
-        fetch('http://localhost:3000/lista-filmes', {method: 'GET', mode: 'cors'})
+        fetch('http://localhost:3000/lista-filmes', {method: 'GET', mode: 'no-cors'})
         .then((response) => {    
             response.json().then((data) => {
-                // console.table(data)
-                this.dataLista = data
+                this.aula.id = data.id;
+                this.aula.nome = data.Nome;
             })
         })
     },
