@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Filmes</title>
+    <title>Block Buster</title>
 
     <link rel="stylesheet" href="app/assets/css/plugins.css">
-	<link rel="stylesheet" href="app/assets/css/style.css">
+    <link rel="stylesheet" href="app/assets/css/style.css">
 </head>
 
 <body>
@@ -52,7 +52,7 @@
                             </li>
                             <li class="dropdown first">
                                 <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown">
-                                    Home
+                                    Inicio
                                 </a>
                             </li>
                         </ul>
@@ -60,14 +60,16 @@
                         <ul class="nav navbar-nav flex-child-menu menu-right">
                             <li class="btn signupLink">
                                 <a onclick="mostrarForm()">Adicionar Filme</a>
-                                <div id="formCadastro" hidden> 
-                                    <form method="POST" action="http://localhost:3000/adiciona-filmes" target="filmes-add">
+                                <div id="formCadastro" hidden>
+                                    <form method="POST" action="http://localhost:3000/adiciona-filmes"
+                                        target="filmes-add">
                                         <input type="text" id="Nome" name="Nome" placeholder="Nome do Filme">
                                         <input type="text" id="Nota" name="Nota" placeholder="Nota do Filme">
                                         <input type="text" id="Ano" name="Ano" placeholder="Ano do Filme">
                                         <input type="submit" value="Cadastrar Filme" onclick="enviarForm()">
                                     </form>
-                                    <iframe style="display:none;" name="filmes-add" src="http://localhost:3000/adiciona-filmes"></iframe>
+                                    <iframe style="display:none;" name="filmes-add"
+                                        src="http://localhost:3000/adiciona-filmes"></iframe>
                                 </div>
                             </li>
                         </ul>
@@ -80,15 +82,15 @@
                 <div class="top-search">
                     <select>
                         <option value="united">TV show</option>
-                        <option value="saab">Others</option>
+                        <option value="saab">Outros</option>
                     </select>
-                    <input type="text" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
+                    <input type="text" placeholder="Encontre seus Filmes, Séries e Seriados preferidos ! ">
                 </div>
             </div>
         </header>
-        
+
         <script>
-            function mostrarForm(){
+            function mostrarForm() {
                 $("#formCadastro").slideToggle();
             }
             function enviarForm() {
@@ -102,10 +104,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="hero-ct">
-                            <h1>Movie Listing - Grid Fullwidth</h1>
+                            <h1>Os Melhores Filmes só Aqui !</h1>
                             <ul class="breadcumb">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li> <span class="ion-ios-arrow-right"></span> movie listing</li>
+                                <li class="active"><a href="#">Inicio</a></li>
+                                <li> <span class="ion-ios-arrow-right"></span> Lista de Filmes</li>
                             </ul>
                         </div>
                     </div>
@@ -117,15 +119,15 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="topbar-filter fw">
-                            <p>Found <span>1,608 movies</span> in total</p>
-                            <label>Sort by:</label>
+                            <p>Filmes de <span> todos </span> genêros</p>
+                            <label>Classificação:</label>
                             <select>
-                                <option value="popularity">Popularity Descending</option>
-                                <option value="popularity">Popularity Ascending</option>
-                                <option value="rating">Rating Descending</option>
-                                <option value="rating">Rating Ascending</option>
-                                <option value="date">Release date Descending</option>
-                                <option value="date">Release date Ascending</option>
+                                <option value="popularity">Comédia</option>
+                                <option value="popularity">Aventura</option>
+                                <option value="rating">Ação</option>
+                                <option value="rating">Infantil</option>
+                                <option value="date">Terror</option>
+                                <option value="date">Suspense</option>
                             </select>
                             <a href="movielist.html" class="list"><i class="ion-ios-list-outline "></i></a>
                             <a href="moviegridfw.html" class="grid"><i class="ion-grid active"></i></a>
@@ -134,20 +136,20 @@
                             <router-view></router-view>
                         </div>
                         <div class="topbar-filter">
-                            <label>Movies per page:</label>
+                            <label>Filmes por Página:</label>
                             <select>
-                                <option value="range">20 Movies</option>
-                                <option value="saab">10 Movies</option>
+                                <option value="range">1 Filmes</option>
+                                <option value="saab">10 Filmes</option>
                             </select>
 
                             <div class="pagination2">
-                                <span>Page 1 of 2:</span>
+                                <span>Página 1 de 2:</span>
                                 <a class="active" href="#">1</a>
                                 <a href="#">2</a>
                                 <a href="#">3</a>
                                 <a href="#">...</a>
-                                <a href="#">78</a>
-                                <a href="#">79</a>
+                                <a href="#">7</a>
+                                <a href="#">8</a>
                                 <a href="#"><i class="ion-arrow-right-b"></i></a>
                             </div>
                         </div>
@@ -161,54 +163,51 @@
                 <div class="flex-parent-ft">
                     <div class="flex-child-ft item1">
                         <a href="index.html"><img class="logo" src="app/assets/images/logo1.png" alt=""></a>
-                        <p>5th Avenue st, manhattan<br>
-                            New York, NY 10001</p>
-                        <p>Call us: <a href="#">(+01) 202 342 6789</a></p>
+                        <p>R. Itajubá, 673 - Portão, Curitiba - PR<br>
+                            CEP: 81070-190</p>
+                        <p>Entre em Contato : <a href="#">(41)3389-7000</a></p>
                     </div>
                     <div class="flex-child-ft item2">
-                        <h4>Resources</h4>
+                        <h4>Recursos</h4>
                         <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Blockbuster</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Contate-nos</a></li>
                             <li><a href="#">Forums</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Centro de Ajuda</a></li>
                         </ul>
                     </div>
                     <div class="flex-child-ft item3">
-                        <h4>Legal</h4>
+                        <h4>Termos Legais</h4>
                         <ul>
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Security</a></li>
+                            <li><a href="#">Termos de Uso</a></li>
+                            <li><a href="#">Política de Privacidade</a></li>
+                            <li><a href="#">Segurança</a></li>
                         </ul>
                     </div>
                     <div class="flex-child-ft item4">
-                        <h4>Account</h4>
+                        <h4>Conta</h4>
                         <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Watchlist</a></li>
-                            <li><a href="#">Collections</a></li>
-                            <li><a href="#">User Guide</a></li>
+                            <li><a href="#">Minha Conta</a></li>
+                            <li><a href="#">Guia de Usuário</a></li>
                         </ul>
                     </div>
                     <div class="flex-child-ft item5">
-                        <h4>Newsletter</h4>
-                        <p>Subscribe to our newsletter system now <br> to get latest news from us.</p>
+                        <h4>Novidades</h4>
+                        <p>Se inscreva para novas novidades do nosso sistema<br>para ficar por dentro das últimas
+                            atualizações</p>
                         <form action="#">
-                            <input type="text" placeholder="Enter your email...">
+                            <input type="text" placeholder="Insira seu E-mail...">
                         </form>
-                        <a href="#" class="btn">Subscribe now <i class="ion-ios-arrow-forward"></i></a>
+                        <a href="#" class="btn">Inscreva-se já <i class="ion-ios-arrow-forward"></i></a>
                     </div>
                 </div>
             </div>
             <div class="ft-copyright">
                 <div class="ft-left">
-                    <p>© 2017 Blockbuster. All Rights Reserved. Designed by leehari.</p>
+                    <p>© 2021 Blockbuster.Todos os Direitos Reservados.</p>
                 </div>
                 <div class="backtotop">
-                    <p><a href="#" id="back-to-top">Back to top <i class="ion-ios-arrow-thin-up"></i></a></p>
+                    <p><a href="#" id="back-to-top">Volte ao topo <i class="ion-ios-arrow-thin-up"></i></a></p>
                 </div>
             </div>
         </footer>
