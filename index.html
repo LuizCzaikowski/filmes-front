@@ -81,10 +81,10 @@
                 <!-- top search form -->
                 <div class="top-search">
                     <select>
-                        <option value="united">TV show</option>
+                        <option value="united">Filmes</option>
                         <option value="saab">Outros</option>
                     </select>
-                    <input type="text" placeholder="Encontre seus Filmes, Séries e Seriados preferidos ! ">
+                    <input type="text" placeholder="Encontre seus Filmes preferidos ! ">
                 </div>
             </div>
         </header>
@@ -118,40 +118,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="topbar-filter fw">
-                            <p>Filmes de <span> todos </span> genêros</p>
-                            <label>Classificação:</label>
-                            <select>
-                                <option value="popularity">Comédia</option>
-                                <option value="popularity">Aventura</option>
-                                <option value="rating">Ação</option>
-                                <option value="rating">Infantil</option>
-                                <option value="date">Terror</option>
-                                <option value="date">Suspense</option>
-                            </select>
-                            <a href="movielist.html" class="list"><i class="ion-ios-list-outline "></i></a>
-                            <a href="moviegridfw.html" class="grid"><i class="ion-grid active"></i></a>
-                        </div>
                         <div class="flex-wrap-movielist mv-grid-fw">
                             <router-view></router-view>
-                        </div>
-                        <div class="topbar-filter">
-                            <label>Filmes por Página:</label>
-                            <select>
-                                <option value="range">1 Filmes</option>
-                                <option value="saab">10 Filmes</option>
-                            </select>
-
-                            <div class="pagination2">
-                                <span>Página 1 de 2:</span>
-                                <a class="active" href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">...</a>
-                                <a href="#">7</a>
-                                <a href="#">8</a>
-                                <a href="#"><i class="ion-arrow-right-b"></i></a>
-                            </div>
                         </div>
                     </div>
                 </div>
