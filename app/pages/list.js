@@ -61,7 +61,9 @@ export const ListComponent = {
             </div>
         </div>
     </div>
-</div>-->
+</div> -->
+
+
 
 <div class="movie-item-style-2 movie-item-style-1" v-for="item in dataLista">
     <img src="app/assets/images/uploads/mv2.jpg" alt="">

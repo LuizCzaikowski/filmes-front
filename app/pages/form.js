@@ -33,7 +33,21 @@ export const FormComponent = {
             </div>
         </div>
     </div>
-</div>`,
+</div>
+
+<ul class="nav navbar-nav flex-child-menu menu-right">
+    <li class="btn signupLink">
+        <a onclick="mostrarForm()">Adicionar Filme</a>
+        <div id="formCadastro" hidden> 
+            <form method="POST" action="/ListaFilmes/CriarFilme">
+                <input type="text" id="Nome" name="Nome"> 
+                <input type="text" id="Ano" name="Ano"> 
+                <input type="text" id="Nota" name="Nota">
+                <input type="submit">
+            </form>
+        </div>
+    </li>
+</ul>`,
     data() {
       return {
         tituloPagina: '',
@@ -104,6 +118,9 @@ export const FormComponent = {
         },
         excluir(id) {
             this.visualizar(id);
+        },
+        mostrarForm(){
+            $("#formCadastro").slideToggle();
         }
     }
 }
