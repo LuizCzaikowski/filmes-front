@@ -61,12 +61,13 @@
                             <li class="btn signupLink">
                                 <a onclick="mostrarForm()">Adicionar Filme</a>
                                 <div id="formCadastro" hidden> 
-                                    <form method="POST" action="http://localhost:3000/adiciona-filmes">
+                                    <form method="POST" action="http://localhost:3000/adiciona-filmes" target="filmes-add">
                                         <input type="text" id="Nome" name="Nome" placeholder="Nome do Filme">
                                         <input type="text" id="Nota" name="Nota" placeholder="Nota do Filme">
                                         <input type="text" id="Ano" name="Ano" placeholder="Ano do Filme">
                                         <input type="submit" value="Cadastrar Filme">
                                     </form>
+                                    <iframe style="display:none;" name="filmes-add" src="http://localhost:3000/adiciona-filmes"></iframe>
                                 </div>
                             </li>
                         </ul>

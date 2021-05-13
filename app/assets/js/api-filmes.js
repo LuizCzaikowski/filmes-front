@@ -84,10 +84,10 @@ export const ListComponent = {
         fetch('http://localhost:3000/lista-filmes', {method: 'GET', mode: 'cors'})
         .then((response) => {    
             response.json().then((data) => {
-                // console.table(data)
+                console.table(data)
                 this.dataLista = data
             })
-        })
+        },  5000)
     },
     methods: {
         
