@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="app/assets/css/plugins.css">
 	<link rel="stylesheet" href="app/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -61,7 +62,7 @@
                             <li class="btn signupLink">
                                 <a onclick="mostrarForm()">Adicionar Filme</a>
                                 <div id="formCadastro" hidden> 
-                                    <form method="POST" action="http://localhost:3000/adiciona-filmes" target="filmes-add">
+                                    <form method="POST" action="http://localhost:3000/filme" target="filmes-add">
                                         <input type="text" id="Nome" name="Nome" placeholder="Nome do Filme">
                                         <input type="text" id="Nota" name="Nota" placeholder="Nota do Filme">
                                         <input type="text" id="Ano" name="Ano" placeholder="Ano do Filme">

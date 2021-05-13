@@ -19,12 +19,12 @@ export const routes = [
     },
     {
         path: '/edit/:id',
-        component: FormComponent,
+        component: ListComponent,
         name: 'Editar'
     },
     {
         path: '/excluir/:id',
-        component: FormComponent,
+        component: ListComponent,
         name: 'Excluir'
     }
 ]

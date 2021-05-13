@@ -33,44 +33,30 @@ export const FormComponent = {
             </div>
         </div>
     </div>
-</div>
-
-<ul class="nav navbar-nav flex-child-menu menu-right">
-    <li class="btn signupLink">
-        <a onclick="mostrarForm()">Adicionar Filme</a>
-        <div id="formCadastro" hidden> 
-            <form method="POST" action="/ListaFilmes/CriarFilme">
-                <input type="text" id="Nome" name="Nome"> 
-                <input type="text" id="Ano" name="Ano"> 
-                <input type="text" id="Nota" name="Nota">
-                <input type="submit">
-            </form>
-        </div>
-    </li>
-</ul>`,
+</div>`,
     data() {
-      return {
-        tituloPagina: '',
-        acao: 'Cadastrar',
-        method: 'POST',
-        aula: {
+        return {
+            tituloPagina: '',
+            acao: 'Cadastrar',
+            method: 'POST',
+            filme: {
                 id: '',
-                nome: ''
+                Nome: ''
             }
-      }
+        }
     },
-    created: function() {        
+    created: function () {
         if (this.$route.name == 'Visual') {
-            this.tituloPagina = 'Visualizar uma Aula';
+            this.tituloPagina = 'Visualizar um Filme';
             this.acao = 'Visualizar';
             this.visualizar(this.$route.params.id);
         } else if (this.$route.name == 'Editar') {
-            this.tituloPagina = 'Editar uma Aula';
+            this.tituloPagina = 'Editar um Filme';
             this.acao = 'Editar';
             this.editar(this.$route.params.id);
             this.method = 'PUT';
         } else if (this.$route.name == 'Excluir') {
-            this.tituloPagina = 'Excluir uma Aula';
+            this.tituloPagina = 'Excluir um Filme';
             this.acao = 'Excluir';
             this.method = 'DELETE';
             this.editar(this.$route.params.id);
@@ -81,37 +67,37 @@ export const FormComponent = {
             this.$router.push('/');
         },
         comunicaApi(method) {
-            let url = `http://localhost:3000/aulas/${this.aula.id}`;          
+            let url = `http://localhost:3000/filme/${this.filme.id}`;
             if (method === 'POST') {
-                url = 'http://localhost:3000/aulas';
+                url = 'http://localhost:3000/filme';
             }
             fetch(url, {
-                method: method, 
-                headers: { 
-                    "Content-Type" : "application/json" 
+                method: method,
+                headers: {
+                    "Content-Type": "application/json"
                 },
                 mode: 'cors',
-                body: JSON.stringify({nome: this.aula.nome})
+                body: JSON.stringify({ Nome: this.filme.Nome })
             })
-            .then((response) => {    
-                response.text().then((data) => {
-                    // console.log(data)
-                    alert(`${this.acao} executada!`);
-                    this.$router.push('/');
+                .then((response) => {
+                    response.text().then((data) => {
+                        // console.log(data)
+                        alert(`${this.acao} executada!`);
+                        this.$router.push('/');
+                    })
                 })
-            })
         },
         visualizar(id) {
-            fetch(`http://localhost:3000/aula/${id}`, {method: 'GET', mode: 'cors'})
-            .then((response) => {    
-                response.json().then((data) => {
-                    this.aula.id = data.id;
-                    this.aula.nome = data.nome;
+            fetch(`http://localhost:3000/filme/${id}`, { method: 'GET', mode: 'cors' })
+                .then((response) => {
+                    response.json().then((data) => {
+                        this.filme.id = data.id;
+                        this.filme.Nome = data.Nome;
+                    })
                 })
-            })
-            .catch((error) => {
-                console.error(error)
-            })
+                .catch((error) => {
+                    console.error(error)
+                })
         },
         editar(id) {
             this.visualizar(id);
@@ -119,7 +105,7 @@ export const FormComponent = {
         excluir(id) {
             this.visualizar(id);
         },
-        mostrarForm(){
+        mostrarForm() {
             $("#formCadastro").slideToggle();
         }
     }
