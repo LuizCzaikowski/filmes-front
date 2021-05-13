@@ -65,7 +65,7 @@
                                         <input type="text" id="Nome" name="Nome" placeholder="Nome do Filme">
                                         <input type="text" id="Nota" name="Nota" placeholder="Nota do Filme">
                                         <input type="text" id="Ano" name="Ano" placeholder="Ano do Filme">
-                                        <input type="submit" value="Cadastrar Filme">
+                                        <input type="submit" value="Cadastrar Filme" onclick="enviarForm()">
                                     </form>
                                     <iframe style="display:none;" name="filmes-add" src="http://localhost:3000/adiciona-filmes"></iframe>
                                 </div>
@@ -90,6 +90,9 @@
         <script>
             function mostrarForm(){
                 $("#formCadastro").slideToggle();
+            }
+            function enviarForm() {
+                window.location.reload();
             }
         </script>
         <!-- END | Header -->
