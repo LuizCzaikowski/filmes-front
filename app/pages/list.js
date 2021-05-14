@@ -3,27 +3,20 @@ export const ListComponent = {
     <div class="movie-item-style-2 movie-item-style-1" v-for="item in dataLista">
     <img src="app/assets/images/uploads/mv2.jpg" alt="">
     <div class="hvr-inner">
-        <a href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i>
+        <a href="moviesingle.html"> Ver mais <i class="ion-android-arrow-dropright"></i>
         </a>
     </div>
     <div class="mv-item-infor">
-        <h6><a id="filme-Nome" href="#">{{item.Nome}}</a></h6>
+        <h6><a id="filme-Nome" contentEditable="true">{{item.Nome}}</a></h6>
         <p class="rate"><span>ID: {{item.id}}</span></p>
-        <input type="text" placeholder="{{item.Nota}}" class="rate"><i class="ion-android-star"></i><span>{{item.Nota}}</span> /10
-        <p id="filme-Ano" class="rate"><i class="ion-android-star"></i><span>{{item.Ano}}</span></p>
-        <p class="rate" style="width: 47px; display: flex;">
-
-        <button v-on:click = 'this.alterarText()'> AKI
-        </button>
-            <button v-on:click = 'this.editar(item)'>
-                <div style="cursor: pointer; margin-right: 13px;">    
-                    <i class="fas fa-pen"></i>
-                </div>
+        <p class="rate" contentEditable="true"><i class="ion-android-star"></i><span>{{item.Nota}}</span> /10</p>
+        <p class="rate" contentEditable="true"><i class="ion-android-star"></i><span>{{item.Ano}}</span></p>
+        <p class="rate">
+            <button v-on:click = 'this.editar(item)' style="width: 38px;">    
+                <i class="fas fa-pen"></i>
             </button>
-            <button v-on:click = 'this.excluir(item.id)'>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
+            <button v-on:click = 'this.excluir(item.id)' style="width: 38px; margin-left: 22px;">
+                <i class="fas fa-trash"></i>
             </button>
         </p>
     </div>
